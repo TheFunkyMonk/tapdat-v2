@@ -9,7 +9,7 @@ const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" />
 		<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans&display=swap" rel="stylesheet"></link>
-		<div className="w-full flex flex-wrap h-screen">
+		<div className="w-full flex flex-wrap flex-col md:flex-row">
 			<StaticQuery
 				query={graphql`
 					{
@@ -32,7 +32,7 @@ const IndexPage = () => (
 				`}
 				render={data => {
 					const edges = data.allContentfulBeer.edges;
-					return edges.map((edge, i) => <Panel beer={edge.node} last={i === (edges.length - 1)} />);
+					return edges.map((edge, i) => <Panel beer={edge.node} tap={i + 1} last={i === (edges.length - 1)} />);
 				}}
 			></StaticQuery>
 		</div>
