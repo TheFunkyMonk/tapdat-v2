@@ -14,9 +14,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div>
-        <main>{children}</main>
-      </div>
+      <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans&display=swap" rel="stylesheet"></link>
+      <main>{children}</main>
     </>
   )
 }

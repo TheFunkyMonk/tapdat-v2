@@ -8,7 +8,6 @@ import Panel from "../components/panel"
 const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" />
-		<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans&display=swap" rel="stylesheet"></link>
 		<div className="w-full flex flex-wrap flex-col md:flex-row">
 			<StaticQuery
 				query={graphql`
