@@ -24,6 +24,7 @@ const IndexPage = () => (
 									maltiness
 									notes
 									tapNumber
+									previewImage
 								}
 							}
 						}
@@ -31,7 +32,16 @@ const IndexPage = () => (
 				`}
 				render={data => {
 					const edges = data.allContentfulBeer.edges;
-					return edges.map((edge, i) => <Panel beer={edge.node} tap={i + 1} last={i === (edges.length - 1)} />);
+					const taps = [];
+					edges.forEach(edge => {
+						if (edge.node.tapNumber) {
+							taps.push(edge);
+						}
+					});
+					taps.sort((a, b) => {
+						return a.node.tapNumber - b.node.tapNumber;
+					});
+					return taps.map((tap, i) => <Panel beer={tap.node} last={i === (taps.length - 1)} />);
 				}}
 			></StaticQuery>
 		</div>
