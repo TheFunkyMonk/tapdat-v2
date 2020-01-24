@@ -31,15 +31,12 @@ const IndexPage = () => (
 					}
 				`}
 				render={data => {
+					const taps = [1, 2, 3];
 					const edges = data.allContentfulBeer.edges;
-					const taps = [];
 					edges.forEach(edge => {
-						if (edge.node.tapNumber) taps.push(edge);
+						if (edge.node.tapNumber) taps[edge.node.tapNumber - 1] = edge;
 					});
-					taps.sort((a, b) => {
-						return a.node.tapNumber - b.node.tapNumber;
-					});
-					return taps.map((tap, i) => <Panel beer={tap.node} last={i === (taps.length - 1)} />);
+					return taps.map((tap, i) => <Panel tap={tap} last={i === (taps.length - 1)} />);
 				}}
 			></StaticQuery>
 		</div>
