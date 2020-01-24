@@ -12,16 +12,16 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
 
-  return (
-    <>
-      <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans&display=swap" rel="stylesheet"></link>
-      <main>{children}</main>
-    </>
-  )
+	return (
+		<>
+			<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Open+Sans&display=swap" rel="stylesheet"></link>
+			<main>{children}</main>
+		</>
+	)
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired,
 }
 
 export default Layout

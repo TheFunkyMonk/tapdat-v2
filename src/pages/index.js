@@ -34,9 +34,7 @@ const IndexPage = () => (
 					const edges = data.allContentfulBeer.edges;
 					const taps = [];
 					edges.forEach(edge => {
-						if (edge.node.tapNumber) {
-							taps.push(edge);
-						}
+						if (edge.node.tapNumber) taps.push(edge);
 					});
 					taps.sort((a, b) => {
 						return a.node.tapNumber - b.node.tapNumber;
