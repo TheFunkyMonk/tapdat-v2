@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@responsive {
+
+	.horizontal-center {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

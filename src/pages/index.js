@@ -18,6 +18,9 @@ const IndexPage = () => (
 									breweryName
 									beerName
 									style
+									description {
+										description
+									}
 									abv
 									accentColor
 									hoppiness
