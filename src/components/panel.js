@@ -1,6 +1,32 @@
 import PropTypes from "prop-types"
 import React from "react"
 
+import hopOn from "../images/hop-on.svg"
+import hopOff from "../images/hop-off.svg"
+import maltOn from "../images/malt-on.svg"
+import maltOff from "../images/malt-off.svg"
+
+const renderRating = (type, rank) => {
+	const onIcon = type === 'hop' ? hopOn : maltOn;
+	const offIcon = type === 'hop' ? hopOff : maltOff;
+
+	return (
+		<>
+			{ function() {
+					let rows = [];
+					const addIcons = (amt, icon) => {
+						for (let i=0; i < amt; i++) {
+							rows.push(<img src={icon} alt='rating icon' class='w-6 mr-2' />);
+						}
+					};
+					addIcons(rank, onIcon);
+					addIcons(5 - rank, offIcon);
+					return rows;
+				}() }
+		</>
+	)
+}
+
 const Panel = ({ tap, last }) => {
 
 	if (typeof tap === 'object') {
@@ -29,6 +55,16 @@ const Panel = ({ tap, last }) => {
 				</div>
 				<div className="bg-white px-4 py-4">
 					<pre className={"font-secondary text-sm p-4 rounded overflow-scroll bg-" + accent.secondary + ""}>{JSON.stringify(beer, null, 4)}</pre>
+
+					<div class="flex flex-wrap my-4 items-center">
+						<p class="font-primary w-16">Hops</p>
+						{renderRating('hop', beer.hoppiness)}
+					</div>
+					<div class="flex flex-wrap my-4 items-center">
+						<p class="font-primary w-16">Malt</p>
+						{renderRating('malt', beer.maltiness)}
+					</div>
+
 				</div>
 			</div>
 		)
@@ -51,6 +87,15 @@ const Panel = ({ tap, last }) => {
 				</div>
 				<div className="bg-white px-4 py-4">
 					<pre className="font-secondary text-sm p-4 rounded overflow-scroll bg-gray-400">Notes: Air</pre>
+
+					<div class="flex flex-wrap my-4 items-center">
+						<p class="font-primary w-16">Hops</p>
+						{renderRating('hop', 0)}
+					</div>
+					<div class="flex flex-wrap my-4 items-center">
+						<p class="font-primary w-16">Malt</p>
+						{renderRating('malt', 0)}
+					</div>
 				</div>
 			</div>
 		)
