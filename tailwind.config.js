@@ -64,11 +64,12 @@ module.exports = {
 			},
 			fontSize: {
 				'4xl': '2.125rem',
-				'6xl': '12rem',
+				'6xl': '14rem',
 			},
 			spacing: {
 				'25': '0.55rem',
 				'55': '1.45rem',
+				'28': '6.5rem',
 			}
 		}
 	},

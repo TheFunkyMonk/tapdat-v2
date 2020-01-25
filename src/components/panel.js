@@ -55,7 +55,7 @@ const Panel = ({ tap, last }) => {
 				</div>
 				<div className={"p-8 h-full relative bg-" + accent.secondary + ""}>
 					<p className="font-secondary text-base italic leading-relaxed">{beer.description.description}</p>
-					<p className="font-primary text-6xl text-white absolute bottom-0 left-0 -mb-24 horizontal-center">{beer.abv}%</p>
+					<p className="font-primary text-6xl tracking-tight text-white absolute bottom-0 left-0 -mb-28 horizontal-center">{beer.abv}%</p>
 				</div>
 				<div className="bg-white px-8 py-4 mt-auto mb-0">
 
