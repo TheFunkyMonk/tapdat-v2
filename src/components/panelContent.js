@@ -15,7 +15,7 @@ const renderRating = (type, rank) => {
 				let rows = [];
 				const addIcons = (amt, icon) => {
 					for (let i = 0; i < amt; i++) {
-						rows.push(<img src={icon} alt='rating icon' class={type === 'hop' ? 'w-6 2xl:w-8 mr-2' : 'w-55 2xl:w-65 mr-25 2xl:mr-275'} />);
+						rows.push(<img src={icon} key={icon + i} alt='rating icon' className={type === 'hop' ? 'w-6 2xl:w-8 mr-2' : 'w-55 2xl:w-65 mr-25 2xl:mr-275'} />);
 					}
 				};
 				addIcons(rank, onIcon);
