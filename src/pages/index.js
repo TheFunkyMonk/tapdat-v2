@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
 		<Layout>
 			<SEO title="Home" />
 			<div className="w-full flex flex-wrap flex-col md:flex-row">
-				{ taps.map((tap, i) => <Panel key={tap.node.tapNumber} tap={tap} last={i === (taps.length - 1)} />) }
+				{ taps.map((tap, i) => <Panel key={tap.node !== undefined ? (tap.node.beerName + tap.node.tapNumber) : tap} tap={tap} last={i === (taps.length - 1)} />) }
 			</div>
 		</Layout>
 	)
