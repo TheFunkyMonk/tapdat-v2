@@ -58,10 +58,10 @@ const Panel = ({
 				<p className="font-primary tracking-wide leading-tight uppercase text-3xl 2xl:text-45xl">{beerStyle}</p>
 			</div>
 			<div className={"p-8 h-full relative bg-" + secondaryAccent + ""}>
-				<p className="relative z-20 font-secondary text-base 2xl:text-xl italic leading-relaxed">{description}</p>
+				{/* <p className="relative z-20 font-secondary text-base 2xl:text-xl italic leading-relaxed">{description}</p> */}
 				{abv !== "" && <p className="z-10 font-primary text-6xl 2xl:text-7xl tracking-tight text-white absolute bottom-0 left-0 -mb-28 2xl:-mb-36 horizontal-center">{abv}%</p>}
 			</div>
-			<div className="bg-white px-8 py-4 mt-auto mb-0">
+			<div className="bg-white px-8 pt-4 pb-16 mt-auto mb-0">
 
 				<div className="flex flex-wrap my-4 items-center">
 					<p className="font-primary w-16 mt-1 text-base 2xl:text-xl">Hops</p>
